@@ -1,6 +1,6 @@
 # feature-toogle
 
-Projeto demonstrativo de configuração de Feature toggle.
+Projeto demonstrativo de configuração de Feature toggle Java 8 com Spring Boot.
 
 Console de Admin, para ligar ou desligar funcionalidades: http://localhost:8080/toggles/index
 
