@@ -6,25 +6,25 @@ Adicione a dependência.
 
 Obs: Segunda dependência e para a console de ADMIN, onde podemos desligar ou ligar uma funcionalidade.
 
-´´´
+```
 <!-- Dependencia de toggle -->
-		<dependency>
-			<groupId>org.togglz</groupId>
-			<artifactId>togglz-spring-boot-starter</artifactId>
-			<version>2.6.1.Final</version>
-		</dependency>
+<dependency>
+	<groupId>org.togglz</groupId>
+	<artifactId>togglz-spring-boot-starter</artifactId>
+	<version>2.6.1.Final</version>
+</dependency>
 
-		<!-- Togglz Admin Console (optional) -->
-		<dependency>
-			<groupId>org.togglz</groupId>
-			<artifactId>togglz-console</artifactId>
-			<version>2.6.1.Final</version>
-		</dependency>
-´´´
+<!-- Togglz Admin Console (optional) -->
+<dependency>
+	<groupId>org.togglz</groupId>
+	<artifactId>togglz-console</artifactId>
+	<version>2.6.1.Final</version>
+</dependency>
+```
 
 Crie um enum extendendo a interface Feture.
 
-´´´
+```
 package br.com.toggle.api.enums;
 
 import org.togglz.core.Feature;
@@ -39,12 +39,12 @@ public enum Funcionalidade implements Feature {
 	public boolean isActive() {
 		return FeatureContext.getFeatureManager().isActive(this);
 	}
-
 }
-´´´
+```
+
 Crei um simple endpoint para testarmos nossa toggle.
 
-´´´
+```
 @RestController
 public class StatusController {
 	
@@ -60,10 +60,10 @@ public class StatusController {
 		return new ResponseEntity<String>(sb.toString(), HttpStatus.OK);
 	}
 }
-´´´
+```
 Quando a toggle estiver ligada, irá trazer o nome completo, caso contrario, trará apenas o primeiro nome.
 
-Console de Admin, para ligar ou desligar funcionalidades: http://localhost:8080/toggles/index
+Console de Admin, para ligar ou desligar funcionalidades: http://localhost:8080/toggles/index. Acesse a console e desligue ou lige a toggle, e consuma a URL abaixo para ver o resultado.
 
 Chamada GET: http://localhost:8080/recuperar/nome
 
